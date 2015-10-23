@@ -6,11 +6,11 @@ nfft=512;
 vals = cell(1,numfids);
 
 thepath='./';
-<<<<<<< HEAD
-syntax='wav'
-=======
+
 syntax='wav';
->>>>>>> refs/remotes/origin/master
+
+
+
 fileList = getAllFiles(thepath);
 % fileList=cell2mat(fileList);
 validIndex =strfind(fileList,syntax);
@@ -23,18 +23,18 @@ for K = 1:length(fileList)
   [vals{K} fs{K}] = audioread(cell2mat(fileList(K)));
 end
 %%
-<<<<<<< HEAD
+
 for i=1:numfids% different grid
     %value=1:10;
     %for knob=2.^value
-        
-=======
+end        
+
 numfids = length(vals);
 for i=1:numfids% different grid
     %value=1:10;
     %for knob=2.^value
         fname=cell2mat(fileList(i));
->>>>>>> refs/remotes/origin/master
+
         y=cell2mat(vals(i));
         Fs=cell2mat(fs(i));
         %spectrogram(y,512,120,1024,Fs);
@@ -58,13 +58,10 @@ for i=1:numfids% different grid
         ss=spectrogram(y_fil,win,noverlap,nfft,Fs);
         fig=figure
         imshow(abs(ss));
-<<<<<<< HEAD
-        title(fnames(i).name)
-        filenames = strrep(fnames(i).name, '.wav', '.jpg');
-=======
-        title(fname)
-        filenames = strrep(fname, '.wav', '.jpg');
->>>>>>> refs/remotes/origin/master
+
+        title(cell2mat(fileList(i)))
+        filenames = strrep(cell2mat(fileList(i)), '.wav', 'spectrum.jpg');
+
         saveas(fig,filenames);
         
         %     [row col]=find(ss>0.1);% get the interested points
