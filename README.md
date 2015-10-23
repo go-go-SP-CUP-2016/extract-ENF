@@ -32,3 +32,6 @@ ss=spectrogram(y_fil,win,noverlap,nfft,Fs);
 2048 --
 <img src="./spectrum tune/nfft2048.jpg" width="100%"/>
 不知道為什麼，nfft數量越大，可以看到的時間上的範圍越小
+
+##各個grid的spectrogram
+圖片位置在test_area的資料夾中各個grid 的資料夾，跟所有wav檔擺在一起
